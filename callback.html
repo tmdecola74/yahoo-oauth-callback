@@ -1,0 +1,21 @@
+<!-- callback.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OAuth Callback</title>
+</head>
+<body>
+  <h2>Processing Yahoo OAuth Redirect...</h2>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    if (code) {
+      document.body.innerHTML = `<h3>Authorization Code:</h3><pre>${code}</pre>`;
+      // You can now manually copy it, or send it to your server
+    } else {
+      document.body.innerHTML = `<h3>No code found in redirect</h3>`;
+    }
+  </script>
+</body>
+</html>
